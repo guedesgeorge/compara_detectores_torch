@@ -9,7 +9,7 @@ def runFaster(fold,fold_dir,ROOT_DATA_DIR):
     # Remove se over Resultados na pasta model_checkpoints
     if os.path.exists(os.path.join(fold_dir, 'Faster')):  
         shutil.rmtree(os.path.join(fold_dir, "Faster")) 
-    subprocess.run([treino]) # Roda o bash para treino
+    subprocess.run([treino], check=True) # Roda o bash para treino
     # Verifica que a pasta Fold_num existe
     if not os.path.exists(fold_dir):
         os.makedirs(fold_dir)
