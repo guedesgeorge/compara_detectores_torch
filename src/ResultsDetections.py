@@ -30,11 +30,8 @@ def print_to_file(line='', file_path='../results/results.csv', mode='a'):
         dir_path = os.path.dirname(file_path)
         if not os.path.exists(dir_path):
             os.makedirs(dir_path, exist_ok=True)
-        original_stdout = sys.stdout  # Salva a referência para a saída padrão original
         with open(file_path, mode) as f:
-            sys.stdout = f  # Altera a saída padrão para o arquivo criado
-            print(line)
-            sys.stdout = original_stdout  # Restaura a saída padrão para o valor original
+            f.write(line + '\n')
     except Exception as e:
         print(f"[ERRO] Falha ao escrever no arquivo {file_path}: {e}")
 
