@@ -90,3 +90,5 @@ for model in MODELS:
             generate_results(root=ROOT_DATA_DIR,fold=fold,model=model_path,model_name=model,save_imgs=save_imgs)
     fim = time.time()
     print(f"Tempo de execução: {fim - inicio:.4f} segundos do modelo{model}")
+
+    # teste 
